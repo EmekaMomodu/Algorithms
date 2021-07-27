@@ -1,2 +1,2 @@
 # Algorithms
-Algorithmic solutions I authored 
+Algorithmic solutions authored by Emeka Momodu

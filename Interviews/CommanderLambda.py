@@ -30,6 +30,11 @@ n. For instance, in the example above, solution(210022, 3) would return 3, since
 """
 import unittest
 
+# time complexity = 0( N * ( kLog(k) + N) )
+# space complexity = 0(N)
+# where N is the number of generated IDs
+#       k is the length of the ID
+
 
 def solution(n, b):
     listOfIds = [n]

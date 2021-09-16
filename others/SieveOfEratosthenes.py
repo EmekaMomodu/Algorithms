@@ -5,7 +5,7 @@
 def gen_primes():
     """ Generate an infinite sequence of prime numbers.
     """
-    # Maps composites to primes witnessing their compositeness.
+    # Maps composites to primes witnessing their composites.
     # This is memory efficient, as the sieve is not "run forward"
     # indefinitely, but only as long as required by the current
     # number being tested.

@@ -14,5 +14,22 @@
 
 
 def threeNumberSum(array, targetSum):
-    # Write your code here.
-    pass
+    threeNumberSumArray = []
+    array.sort()
+    arrayLength = len(array)
+    for i in range(arrayLength - 2):
+        currentNumber = array[i]
+        left = i + 1
+        right = arrayLength - 1
+        while left < right:
+            currentSum = currentNumber + array[left] + array[right]
+            if currentSum == targetSum:
+                threeNumberSumArray.append([currentNumber, array[left], array[right]])
+                right -= 1
+                left += 1
+            elif currentSum > targetSum:
+                right -= 1
+            else:
+                left += 1
+    return threeNumberSumArray
+

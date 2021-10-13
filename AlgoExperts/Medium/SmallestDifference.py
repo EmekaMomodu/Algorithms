@@ -13,3 +13,32 @@
   difference.
 
 """
+
+
+def smallestDifference(arrayOne, arrayTwo):
+    arrayOne.sort()
+    arrayTwo.sort()
+
+    firstIdx = 0
+    secondIdx = 0
+
+    firstLen = len(arrayOne)
+    secondLen = len(arrayTwo)
+
+    smallestDifference = float('inf')
+
+    while firstIdx < firstLen and secondIdx < secondLen:
+        first = arrayOne[firstIdx]
+        second = arrayTwo[secondIdx]
+        currentDifference = abs(first - second)
+        if currentDifference < smallestDifference:
+            smallestDifference = currentDifference
+            smallestDifferenceArray = [first, second]
+        if first == second:
+            return smallestDifferenceArray
+        elif first < second:
+            firstIdx += 1
+        elif second < first:
+            secondIdx += 1
+
+    return smallestDifferenceArray

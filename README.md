@@ -1,2 +1,2 @@
 # Algorithms
-Algorithmic solutions authored by Emeka Momodu
+Algorithmic solutions authored in Python by Emeka Momodu 

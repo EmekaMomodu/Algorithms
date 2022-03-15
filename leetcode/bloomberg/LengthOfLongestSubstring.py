@@ -26,6 +26,7 @@
 
 """
 
+
 # Solution 1
 class SolutionOne:
     def lengthOfLongestSubstring(self, s: str) -> int:
@@ -64,8 +65,3 @@ class SolutionTwo:
             longestLength = max(longestLength, rightPointer - leftPointer + 1)
             hashMap[currentChar] = rightPointer
         return longestLength
-
-
-
-
-

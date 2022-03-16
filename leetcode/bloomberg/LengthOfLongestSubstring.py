@@ -33,18 +33,18 @@ class SolutionOne:
         longestLength = 0
         currentLongestLength = 0
         hashMap = {}
-        pointer = 0
-        while pointer < len(s):
-            currentChar = s[pointer]
+        index = 0
+        while index < len(s):
+            currentChar = s[index]
             indexSavedInHashMap = hashMap.get(currentChar, -1)
-            isCurrCharOutsideCurrSubStr = True if pointer - currentLongestLength > indexSavedInHashMap else False
-            if indexSavedInHashMap < 0 or indexSavedInHashMap == pointer or isCurrCharOutsideCurrSubStr:
-                hashMap[currentChar] = pointer
-                pointer += 1
+            isCurrCharOutsideCurrSubStr = True if index - currentLongestLength > indexSavedInHashMap else False
+            if indexSavedInHashMap < 0 or indexSavedInHashMap == index or isCurrCharOutsideCurrSubStr:
+                hashMap[currentChar] = index
+                index += 1
                 currentLongestLength += 1
             else:
-                hashMap[currentChar] = pointer
-                pointer = indexSavedInHashMap + 1
+                hashMap[currentChar] = index
+                index = indexSavedInHashMap + 1
                 longestLength = max(currentLongestLength, longestLength)
                 currentLongestLength = 0
         longestLength = max(currentLongestLength, longestLength)

@@ -34,6 +34,18 @@ Guaranteed constraints:
 
 The number of ways to split the given string.
 """
+
+"""
+The time complexity of the provided implementation of the solution function is O(n^2), where n is the length of the 
+input string s. This is because there are two nested loops that iterate over all possible pairs of lengths of 
+substrings a and b, and each iteration takes constant time to extract the corresponding substrings and compare their 
+concatenations. Therefore, the overall time complexity is proportional to the number of iterations, which is roughly n^2/2.
+
+The space complexity of the function is also O(n), because the only additional memory used is for the three substring 
+variables a, b and c, which can each be at most as long as the input string s. Therefore, the total space used is 
+proportional to the length of the input string s.
+"""
+
 def solution(s):
     n = len(s)
     count = 0

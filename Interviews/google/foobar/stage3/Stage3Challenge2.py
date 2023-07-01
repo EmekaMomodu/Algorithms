@@ -23,62 +23,15 @@ For example, [1, 2, 3, 4, 5, 6] has the triples: [1, 2, 4], [1, 2, 6], [1, 3, 6]
 
 """
 
-
 def solution(l):
-    lengthOfList = len(l)
-    numberOfLuckyTriples = 0
-    left = 0
-    middle = 1
-    right = 2
-    while True:
-        if l[middle] % l[left] == 0:
-            if l[right] % l[middle] == 0:
-                numberOfLuckyTriples += 1
-                if right != lengthOfList - 1:
-                    right += 1
-                    continue
-            else:
-                if right != lengthOfList - 1:
-                    right += 1
-                    continue
-        if middle != lengthOfList - 2:
-            middle += 1
-            right = middle + 1
-            continue
-        if left != lengthOfList - 3:
-            left += 1
-            middle = left + 1
-            right = middle + 1
-            continue
-        break
-    return numberOfLuckyTriples
-
-
-def answer(l):
-    """
-    We start by initializing a counter for every number in the list.
-    This counter resembles the number of times a particular entry in the list has been a multiple of a previous number.
-    Each time we increment that, we can also increase our number of triplets by the factor we're currently evaluating.
-    For example:
-    [1, 2, 4, 8]
-    When we reach 2, 1 is obviously a factor of 2. c[2] = 1.
-    When we reach 4, 1 is a factor of 4. c[4] = 1.
-                     2 is a factor of 4. c[4] = 2. triplets += c[2] (triplets is now 1)
-    When we reach 8, 1 is a factor of 8. c[8] = 1.
-                     2 is a factor of 8. c[8] = 2. triplets += c[2] (triplets is now 2)
-                     4 is a factor of 8. c[8] = 3. triplets += c[4]. (triplets is now 4)
-    :param l: A list of integers to be evaluated.
-    :return: The number of 'lucky triplets' in the given list.
-    """
-    counts = [0] * len(l)
-    triplets = 0
-    for product in range(0, len(l)):
-        for factor in range(0, product):
-            if l[product] % l[factor] == 0:
-                counts[product] += 1
-                triplets += counts[factor]
-    return triplets
-
+    c = [0] * len(l)
+    count = 0
+    for i in range(0,len(l)):
+        for j in range(0, i):
+            if l[i] % l[j] == 0:
+                c[i] = c[i] + 1
+                count = count + c[j]
+    return count
 
 if __name__ == '__main__':
     l = [1, 2, 3, 4, 5, 6]

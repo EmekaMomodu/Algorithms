@@ -31,34 +31,14 @@ need to pass, so the solution would be "1". However, if M = "2" and F = "4", it 
 
 
 def solution(x, y):
-
-    x, y = int(x), int(y)
-
-    cycles = 0
-    # Counts the number of replication cycles
-
-    while x != 1 and y != 1:
-
-        # If number of Mach bombs and Facula bombs are same
-        # Then, It is impossible to replicate to the desired
-        # Total number of bombs
-
-        if x % y == 0:
-            return "impossible"
-
-        else:
-            # cycles = cycles + 1
-            # ABOVE ASSIGNMENT, CAUSES TWO TEST CASES TO FAIL
-            # FOR EXAMPLE FOR 7/3 : 2 CYCLES ARE CONSUMED
-            cycles = cycles+int(max(x, y)/min(x, y))
-            print("cycles: " + str(cycles))
-
-            x, y = max(x, y) % min(x, y), min(x, y)
-            print("x: " + str(x) + " y: " + str(y))
-
-    result = str(cycles+max(x, y)-1)
-    print("result::: " + result)
-    return result
+    M, F = max(int(x), int(y)), min(int(x), int(y))
+    res = 0
+    while F > 0:
+        res += M // F
+        M, F = F, M % F
+    if M != 1:
+        return "impossible"
+    return str(res - 1)
 
 
 if __name__ == '__main__':

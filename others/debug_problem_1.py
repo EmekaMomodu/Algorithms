@@ -29,7 +29,14 @@ def solution(A, X):
         if A[m] > X:
             r = m - 1
         else:
-            l = m
+            l = m + 1
+            if A[m] == X:
+                return m
     if A[l] == X:
         return l
     return -1
+
+if __name__ == '__main__':
+    A = [0, 1, 1, 2]
+    X = 4
+    print(solution(A, X))

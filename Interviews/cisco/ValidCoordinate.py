@@ -20,7 +20,6 @@ Constraints
 """
 def is_valid(cords):
     res = []
-    signs = "+-"
     for cord in cords:
         if len(cord) < 1:
             res.append("Invalid")

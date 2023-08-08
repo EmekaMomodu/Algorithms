@@ -27,7 +27,7 @@ There are 5 coordinates- (2,2), (3,2), (2,6), (4,5) and (2,8).
 The best path is the horizontal one covering (2,2), (2,6) and (2,8).
 So, the output is 3.
 """
-
+# TEST ID 278840481108728
 def max_num_of_drop_point(x_cords, y_cords):
     x_counts = {}
     y_counts = {}
@@ -45,3 +45,4 @@ if __name__ == '__main__':
     x_cords_ = [2,3,2,4,2]
     y_cords_ = [2,2,6,5,8]
     print(max_num_of_drop_point(x_cords_, y_cords_))
+

@@ -1,54 +1,22 @@
-# decorator example
-
-def my_double_args(func):
-    def multiply_args_by_two(*args):
-        func(args[0] * 2, args[1] * 2)
-    return multiply_args_by_two
 
 
-@my_double_args
-def my_mult(x, y):
-    print(x * y)
-    return x * y
-
-import base64
-from itertools import cycle
-
-
-def decrypt(encrypted_message, encryption_key):
-    base64_decoded              = base64.b64decode(encrypted_message)
-    decrypted_message           = [''] * len(base64_decoded)
-    encryption_key_iterator     = cycle(encryption_key)
-    for i, c in enumerate(base64_decoded):
-        decrypted_message[i] += chr(ord(c) ^ ord(encryption_key_iterator.next()))
-    return ''.join(decrypted_message)
-
-
-
-
-if __name__ == '__main__':
-    # encryption_key = 'chukwuemeka'
-    # encrypted_message = 'HkoWHgJNCBweSERPRUoCGQRPGUhBT0MWCgEJDgBJGApKT15VQggWHwRLAAoJSEhVQggDDQ5cGRxK T15VQgQLCBNLCQYPAwFSSU1CCgJGBAobCgkQCxlCS1sOShoDAwsWDggBTE0OSh0MDQYcER5CS1sO ShwMCQFSSU1CDQ5BSk9XT0MCDANETBw='
-    #
-    # decrypted_message = decrypt(encrypted_message, encryption_key)
-    # print(decrypted_message)
-
-    # !/usr/bin/env python
-    # -*- coding: utf-8 -*-
-
-    import base64
-
-    MESSAGE = '''
-    HkoWHgJNCBweSERPRUoCGQRPGUhBT0MWCgEJDgBJGApKT15VQggWHwRLAAoJSEhVQggDDQ5cGRxK T15VQgQLCBNLCQYPAwFSSU1CCgJGBAobCgkQCxlCS1sOShoDAwsWDggBTE0OSh0MDQYcER5CS1sO ShwMCQFSSU1CDQ5BSk9XT0MCDANETBw=
-    '''
-
-    KEY = 'emeka.momodu'
-
-    result = []
-    for i, c in enumerate(base64.b64decode(MESSAGE)):
-        result.append(chr(ord(c) ^ ord(KEY[i % len(KEY)])))
-
-    print
-    ''.join(result)
-
-    # my_mult(1, 1)
+# if __name__ == '__main__':
+#     # Example usage
+#     restaurant = Restaurant()
+#     restaurant.add_menu_item("Pasta", 12.00)
+#     restaurant.add_menu_item("Pizza", 15.00)
+#     restaurant.add_menu_item("Salad", 8.00)
+#
+#     # Create a bill for table 1
+#     bill = restaurant.create_bill(1, "Alice")
+#     bill.add_item(restaurant.menu[0])  # Pasta
+#     bill.add_item(restaurant.menu[1])  # Pizza
+#
+#     # Print the bill
+#     bill.print_bill()
+#
+#     # Split the bill into 2
+#     split_bills = restaurant.split_bill(bill, 2)
+#     for i, split_bill in enumerate(split_bills, start=1):
+#         print(f"\nSplit Bill {i}:")
+#         split_bill.print_bill()

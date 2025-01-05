@@ -1,4 +1,4 @@
-#!/Users/cmomodu/PProjects/Algorithms/venv/bin/python
+#!/home/emeka/projects/Algorithms/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

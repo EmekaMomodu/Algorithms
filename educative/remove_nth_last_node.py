@@ -4,12 +4,7 @@ Problem: Remove nth Node from End of List
 
 
 Statement
-Given the head of a singly linked list, remove the
-n
-t
-h
-n
-th
+Given the head of a singly linked list, remove the nth
 
  node from the end of the list and return its head.
 
